@@ -24,7 +24,7 @@ export default function Home() {
       {/* Full-width landscape image below the name */}
       <div className="w-full">
         <img
-          src="/My-portfolio/landscape.jpg"
+          src="/landscape.jpg"
           alt="Landscape"
           className="w-full h-[340px] md:h-[420px] object-cover object-center"
         />
