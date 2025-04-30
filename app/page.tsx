@@ -44,8 +44,8 @@ export default function Home() {
         </div>
         {/* Right column: availability info */}
         <div className="flex flex-col items-center md:items-end w-full md:w-auto">
-          <span className="block text-secondary text-sm tracking-widest mb-1">AVAILABLE FOR FREELANCE WORK</span>
-          <span className="block text-5xl md:text-6xl font-bold tracking-tight">{displayDate}</span>
+          <span className="block text-secondary text-sm tracking-widest mb-1"></span>
+          <span className="block text-5xl md:text-6xl font-bold tracking-tight"></span>
         </div>
       </section>
     </main>

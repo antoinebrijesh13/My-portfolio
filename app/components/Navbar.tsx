@@ -11,7 +11,7 @@ export default function Navbar() {
           <span className="ml-1 text-xl align-super">©</span>
         </div>
         <div className="hidden md:block text-secondary text-base font-normal tracking-wide">
-          (Ai enthusiast & Developer)
+          (Developer)
         </div>
       </div>
 
