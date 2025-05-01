@@ -13,6 +13,7 @@ const oswald = Oswald({ subsets: ['latin'], weight: ['700'], variable: '--font-o
 export const metadata: Metadata = {
   title: 'Portfolio',
   description: 'Minimalistic portfolio website',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
 }
 
 export default function RootLayout({
@@ -22,9 +23,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${montserrat.variable} ${archivoBlack.variable} ${oswald.variable} font-sans antialiased`}>
-        <Navbar />
-        {children}
+      <body className={`${inter.variable} ${montserrat.variable} ${archivoBlack.variable} ${oswald.variable} font-sans antialiased overflow-x-hidden`}>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   )

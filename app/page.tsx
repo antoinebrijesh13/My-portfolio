@@ -131,9 +131,9 @@ export default function Home() {
   return (
     <main ref={mainRef} className="min-h-screen bg-[#EFECE5]">
       {/* Name at the top, left-aligned, bold, uppercase, tight tracking, Oswald, slightly transparent */}
-      <section className="w-full pt-12 pb-8 px-4 md:px-12 animate-on-scroll">
-        <h1 className="font-extended font-black uppercase tracking-[-0.04em] text-[clamp(2.5rem,10vw,8rem)] leading-none mb-4 text-left w-full opacity-80">
-          ANTONY BRIJESH<span className="ml-4 align-baseline">©</span>
+      <section className="w-full pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6 md:px-12 animate-on-scroll">
+        <h1 className="font-extended font-black uppercase tracking-[-0.04em] text-[clamp(2rem,8vw,8rem)] leading-none mb-4 text-left w-full opacity-80">
+          ANTONY BRIJESH<span className="ml-2 sm:ml-4 align-baseline">©</span>
         </h1>
       </section>
 
@@ -142,42 +142,44 @@ export default function Home() {
         <img
           src="/landscape.jpg"
           alt="Landscape"
-          className="w-full h-[340px] md:h-[420px] object-cover object-center"
+          className="w-full h-[280px] sm:h-[340px] md:h-[420px] object-cover object-center"
         />
       </div>
 
       {/* Main hero content: two columns */}
-      <section className="container flex flex-col md:flex-row md:items-center md:justify-between gap-8 py-8 animate-on-scroll">
+      <section className="container flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8 py-6 sm:py-8 px-4 sm:px-6 md:px-8 animate-on-scroll">
         {/* Left column: arrow, greeting, contact button */}
         <div className="flex flex-col items-start justify-center max-w-md mx-auto md:mx-0 w-full">
-          <span className="text-2xl mb-4 text-[#8A8C6D]">→</span>
-          <p className="text-secondary text-xl md:text-2xl font-medium mb-8">
+          <span className="text-xl sm:text-2xl mb-3 sm:mb-4 text-[#8A8C6D]">→</span>
+          <p className="text-secondary text-lg sm:text-xl md:text-2xl font-medium mb-6 sm:mb-8">
             Hi there! I'm really glad you stopped by
           </p>
-          <Link href="/contact" className="contact-btn inline-block px-8 py-4 rounded-full bg-primary text-white text-lg font-bold tracking-wide shadow hover:bg-opacity-90 transition-colors mb-8">
-            CONTACT ME <span className="ml-2">↗</span>
-          </Link>
-          <button 
-            onClick={scrollToAbout}
-            className="inline-block px-8 py-4 rounded-full bg-white text-primary text-lg font-bold tracking-wide shadow hover:bg-opacity-90 transition-colors mb-8"
-          >
-            ABOUT ME <span className="ml-2">↓</span>
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+            <Link href="/contact" className="contact-btn inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary text-white text-base sm:text-lg font-bold tracking-wide shadow hover:bg-opacity-90 transition-colors text-center">
+              CONTACT ME <span className="ml-2">↗</span>
+            </Link>
+            <button 
+              onClick={scrollToAbout}
+              className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white text-primary text-base sm:text-lg font-bold tracking-wide shadow hover:bg-opacity-90 transition-colors text-center"
+            >
+              ABOUT ME <span className="ml-2">↓</span>
+            </button>
+          </div>
         </div>
         {/* Right column: availability info */}
-        <div className="flex flex-col items-center md:items-end w-full md:w-auto">
+        <div className="flex flex-col items-center md:items-end w-full md:w-auto mt-6 sm:mt-0">
           <span className="block text-secondary text-sm tracking-widest mb-1"></span>
-          <span className="block text-5xl md:text-6xl font-bold tracking-tight"></span>
+          <span className="block text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"></span>
         </div>
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="w-full py-16 px-4 md:px-12 bg-white animate-on-scroll">
+      <section id="about" className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-white animate-on-scroll">
         <div className="container mx-auto">
-          <h1 className="heading-1 mb-6">Hi I'm Antony</h1>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h1 className="heading-1 mb-4 sm:mb-6">Hi I'm Antony</h1>
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <div>
-              <p className="paragraph mb-6">
+              <p className="paragraph mb-4 sm:mb-6">
                 I like codeing particularly web design and Machine Learning, and I have a deep interest in Artificial Intelligence, especially in Large Language Models and Generative AI.
               </p>
               <p className="paragraph">
@@ -194,29 +196,28 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full py-16 px-4 md:px-12 bg-[#EFECE5] animate-on-scroll">
+      <section id="projects" className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-[#EFECE5] animate-on-scroll">
         <div className="container mx-auto">
-          <h1 className="heading-1 mb-12">Projects</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h1 className="heading-1 mb-8 sm:mb-12">Projects</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Project 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="aspect-video bg-gray-100">
-                {/* Project Image Placeholder */}
                 <div className="w-full h-full flex items-center justify-center bg-[#8A8C6D]">
-                  <span className="text-white text-xl">Project Image</span>
+                  <span className="text-white text-lg sm:text-xl">Project Image</span>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Project Title</h3>
-                <p className="text-secondary mb-4">A brief description of the project and its key features.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">React</span>
-                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Next.js</span>
-                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">TypeScript</span>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-2">Project Title</h3>
+                <p className="text-secondary mb-3 sm:mb-4 text-sm sm:text-base">A brief description of the project and its key features.</p>
+                <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">React</span>
+                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">Next.js</span>
+                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">TypeScript</span>
                 </div>
-                <div className="flex gap-4">
-                  <a href="#" className="text-primary hover:underline">View Project</a>
-                  <a href="#" className="text-primary hover:underline">GitHub</a>
+                <div className="flex gap-3 sm:gap-4">
+                  <a href="#" className="text-primary hover:underline text-sm sm:text-base">View Project</a>
+                  <a href="#" className="text-primary hover:underline text-sm sm:text-base">GitHub</a>
                 </div>
               </div>
             </div>
