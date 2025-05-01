@@ -4,6 +4,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -289,16 +290,16 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <div>
               <p className="paragraph mb-4 sm:mb-6">
-              Currently, I am studying at Kyungpook National University in Daegu, South Korea 
-              I like coding particularly designing and Machine Learning, and I have a deep interest in Artificial Intelligence, especially in Large Language Models and Generative AI.
+              Currently I'm a student at Kyungpook National University in Daegu. Coding is something I genuinely enjoy, especially working on design and Machine Learning aspects. 
+              I'm also really fascinated by Artificial Intelligence – Large Language Models and Generative AI are areas I find particularly exciting. I'm always eager to learn and love keeping up with new tech, trying out different frameworks and exploring AI concepts.
               </p>
               <p className="paragraph">
-                I thrive on learning and constantly find myself drawn to the cutting edge of technology I love diving into new frameworks and AI concepts.
+              I'm always eager to learn and love keeping up with new tech, trying out different frameworks and exploring AI concepts.
               </p>
             </div>
             <div>
               <p className="paragraph">
-                Outside of the tech world, I'm an avid football fan especially FC Barcelona(Visca El Barça!) and enjoy unwinding by playing the piano and guitar.
+              Other than the tech stuff,I love watching football (big FC Barcelona fan here - Visca El Barça!),Photography and I also enjoy playing the piano and guitar.
               </p>
             </div>
           </div>
@@ -327,9 +328,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/1.jpg")}
             >
-              <img 
+              <Image 
                 src="/1.jpg" 
                 alt="Photography 1" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -342,9 +345,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/3.jpg")}
             >
-              <img 
+              <Image 
                 src="/3.jpg" 
                 alt="Photography 2" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -357,9 +362,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("4.jpg")}
             >
-              <img 
+              <Image 
                 src="4.jpg" 
                 alt="Photography 3" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -372,9 +379,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("7.jpg")}
             >
-              <img 
+              <Image 
                 src="7.jpg" 
                 alt="Photography 4" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -387,9 +396,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("8.jpg")}
             >
-              <img 
+              <Image 
                 src="8.jpg" 
                 alt="Photography 5" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -402,9 +413,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/5.jpg")}
             >
-              <img 
+              <Image 
                 src="/5.jpg" 
                 alt="Photography 6" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -417,9 +430,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/9.jpg")}
             >
-              <img 
+              <Image 
                 src="/9.jpg" 
                 alt="Photography 7" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -432,9 +447,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/88.jpg")}
             >
-              <img 
+              <Image 
                 src="/88.jpg" 
                 alt="Photography 8" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -447,9 +464,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/20.jpg")}
             >
-              <img 
+              <Image 
                 src="/20.jpg" 
                 alt="Photography 9" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -462,9 +481,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/21.jpg")}
             >
-              <img 
+              <Image 
                 src="/21.jpg" 
                 alt="Photography 10" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -477,9 +498,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/22.jpg")}
             >
-              <img 
+              <Image 
                 src="/22.jpg" 
                 alt="Photography 11" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
@@ -492,9 +515,11 @@ export default function Home() {
               className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
               onClick={() => openLightbox("/23.jpg")}
             >
-              <img 
+              <Image 
                 src="/23.jpg" 
                 alt="Photography 12" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
