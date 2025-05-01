@@ -90,6 +90,20 @@ export default function Home() {
     }
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: {
+          y: contactSection,
+          offsetY: 0
+        },
+        ease: "power2.inOut"
+      });
+    }
+  };
+
   const openLightbox = (imageSrc: string) => {
     setSelectedImage(imageSrc);
     document.body.style.overflow = 'hidden';
@@ -129,7 +143,14 @@ export default function Home() {
   };
 
   return (
-    <main ref={mainRef} className="min-h-screen bg-[#EFECE5]">
+    <main ref={mainRef} className="min-h-screen bg-[#EFECE5] relative">
+      {/* Grain Texture Overlay */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.50] mix-blend-multiply" 
+        style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+          backgroundSize: '200px 200px'
+        }}
+      />
       {/* Name at the top, left-aligned, bold, uppercase, tight tracking, Oswald, slightly transparent */}
       <section className="w-full pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6 md:px-12 animate-on-scroll">
         <h1 className="font-extended font-black uppercase tracking-[-0.04em] text-[clamp(2rem,8vw,8rem)] leading-none mb-4 text-left w-full opacity-80">
@@ -155,9 +176,12 @@ export default function Home() {
             Hi there! I'm really glad you stopped by
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-            <Link href="/contact" className="contact-btn inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary text-white text-base sm:text-lg font-bold tracking-wide shadow hover:bg-opacity-90 transition-colors text-center">
+            <button 
+              onClick={scrollToContact}
+              className="contact-btn inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary text-white text-base sm:text-lg font-bold tracking-wide shadow hover:bg-opacity-90 transition-colors text-center"
+            >
               CONTACT ME <span className="ml-2">↗</span>
-            </Link>
+            </button>
             <button 
               onClick={scrollToAbout}
               className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white text-primary text-base sm:text-lg font-bold tracking-wide shadow hover:bg-opacity-90 transition-colors text-center"
@@ -170,28 +194,6 @@ export default function Home() {
         <div className="flex flex-col items-center md:items-end w-full md:w-auto mt-6 sm:mt-0">
           <span className="block text-secondary text-sm tracking-widest mb-1"></span>
           <span className="block text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"></span>
-        </div>
-      </section>
-
-      {/* About Me Section */}
-      <section id="about" className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-white animate-on-scroll">
-        <div className="container mx-auto">
-          <h1 className="heading-1 mb-4 sm:mb-6">Hi I'm Antony</h1>
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-            <div>
-              <p className="paragraph mb-4 sm:mb-6">
-                I like codeing particularly web design and Machine Learning, and I have a deep interest in Artificial Intelligence, especially in Large Language Models and Generative AI.
-              </p>
-              <p className="paragraph">
-                I thrive on learning and constantly find myself drawn to the cutting edge of technology I love diving into new frameworks and AI concepts.
-              </p>
-            </div>
-            <div>
-              <p className="paragraph">
-                Outside of the tech world, I'm an avid football fan especially FC Barcelona(Visca El Barça!) and enjoy unwinding by playing the piano and guitar.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -271,13 +273,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Me Section */}
+      <section id="about" className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-[#EFECE5] animate-on-scroll relative">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.80] mix-blend-screen" 
+          style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+            backgroundSize: '200px 200px'
+          }}
+        />
+        <div className="container mx-auto relative">
+          <h1 className="heading-1 mb-4 sm:mb-6">Hi I'm Antony</h1>
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+            <div>
+              <p className="paragraph mb-4 sm:mb-6">
+              Currently, I am studying at Kyungpook National University in Daegu, South Korea 
+              I like coding particularly designing and Machine Learning, and I have a deep interest in Artificial Intelligence, especially in Large Language Models and Generative AI.
+              </p>
+              <p className="paragraph">
+                I thrive on learning and constantly find myself drawn to the cutting edge of technology I love diving into new frameworks and AI concepts.
+              </p>
+            </div>
+            <div>
+              <p className="paragraph">
+                Outside of the tech world, I'm an avid football fan especially FC Barcelona(Visca El Barça!) and enjoy unwinding by playing the piano and guitar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Photography Section */}
       <section 
         ref={photographyRef} 
         id="photography" 
-        className="w-full py-16 px-4 md:px-12 bg-black text-white animate-on-scroll"
+        className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-black text-white animate-on-scroll relative"
       >
-        <div className="container mx-auto">
+        {/* Grain Texture Overlay for Photography Section */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.25] mix-blend-screen" 
+          style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+            backgroundSize: '200px 200px'
+          }}
+        />
+        <div className="container mx-auto relative">
           <h1 className="heading-1 mb-4 text-[#EFECE5] hover:text-white transition-colors duration-200 cursor-default">Photography</h1>
           <p className="text-[#EFECE5] text-lg mb-12 hover:text-white transition-colors duration-200 cursor-default">Sharing some moments I've captured – hope you like them!</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -458,6 +496,70 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                 <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-[#EFECE5] animate-on-scroll relative">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.65] mix-blend-multiply" 
+          style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.95\' numOctaves=\'5\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+            backgroundSize: '200px 200px'
+          }}
+        />
+        <div className="container mx-auto relative">
+          <h1 className="heading-1 mb-8 sm:mb-12">Let's Connect</h1>
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Left Column - Contact Form */}
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Draw or write whats on your mind :)</h2>
+              <p className="text-secondary mb-8 max-w-lg">
+                Your message will be kept private and secure.
+              </p>
+              <Link 
+                href="https://1drv.ms/o/c/c8b6d04d99283592/EiKXtobmmJRJqyJpq3NoCBcBsKcPly3s5oaVdO5ZNPDUrA?e=i4gDLc" 
+                className="inline-block px-8 py-4 bg-primary text-white rounded-full hover:bg-opacity-90 transition-colors text-lg font-bold shadow"
+              >
+                Open Notebook <span className="ml-2">↗</span>
+              </Link>
+            </div>
+
+            {/* Right Column - Contact Info */}
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Contact Information</h2>
+              <div className="space-y-6">
+                <div>
+                  <span className="block text-secondary text-sm mb-1">Email</span>
+                  <a href="mailto:brijeshantonio13@gmail.com" className="text-lg hover:text-primary transition-colors">
+                    brijeshantonio13@gmail.com
+                  </a>
+                </div>
+                <div>
+                  <span className="block text-secondary text-sm mb-1">Location</span>
+                  <p className="text-lg">Daegu,South Korea</p>
+                </div>
+                <div>
+                </div>
+                <div>
+                  <span className="block text-secondary text-sm mb-1">Social</span>
+                  <div className="flex space-x-6 mt-2">
+                    <a href="https://www.linkedin.com/in/antony-brijesh-a0aa562ab/" target="_blank" className="text-lg hover:text-primary transition-colors">
+                      LinkedIn
+                    </a>
+                    <a href="https://github.com/antoinebrijesh13" target="_blank" className="text-lg hover:text-primary transition-colors">
+                      GitHub
+                    </a>
+                    <a href="https://www.instagram.com/antttttbrrrrr/" target="_blank" className="text-lg hover:text-primary transition-colors">
+                      Instagram
+                    </a>
+                    <a href="https://vsco.co/antonybrijeshhh/gallery?fbclid=PAZXh0bgNhZW0CMTEAAadFRJT6KM-Svjg8pbsZSXma7lJbnXYGRc7r4kbdSQdhxouKTyEVZPta9Uw8zg_aem_ylu71SsW0peZzvxP79FTlA" target="_blank" className="text-lg hover:text-primary transition-colors">
+                      VSCO
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

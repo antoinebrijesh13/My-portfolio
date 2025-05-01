@@ -68,7 +68,15 @@ export default function Navbar() {
                 <Link href="/about" className="hover:text-primary transition-colors">About</Link>
               )}
             </li>
-            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+            <li>
+              {pathname === '/' ? (
+                <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-colors">
+                  Contact
+                </button>
+              ) : (
+                <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
+              )}
+            </li>
           </ul>
         </nav>
       </div>

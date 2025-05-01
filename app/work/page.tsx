@@ -78,36 +78,52 @@ export default function Work() {
           </section>
 
           {/* About Me Section */}
-          <section>
-            <h1 className="heading-1 mb-6">Hi I'm Antony</h1>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="paragraph mb-6">
-                  I like codeing particularly web design and Machine Learning, and I have a deep interest in Artificial Intelligence, especially in Large Language Models and Generative AI.
-                </p>
-                <p className="paragraph">
-                  I thrive on learning and constantly find myself drawn to the cutting edge of technology I love diving into new frameworks and AI concepts.
-                </p>
-              </div>
-              <div>
-                <p className="paragraph">
-                  Outside of the tech world, I'm an avid football fan especially FC Barcelona(Visca El Barça!) and enjoy unwinding by playing the piano and guitar.
-                </p>
+          <section className="relative bg-[#EFECE5] py-12 px-8 rounded-lg">
+            <div className="absolute inset-0 pointer-events-none opacity-[0.80] mix-blend-multiply" 
+              style={{
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+                backgroundSize: '200px 200px'
+              }}
+            />
+            <div className="relative">
+              <h1 className="heading-1 mb-6">Hi I'm Antony</h1>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <p className="paragraph mb-6">
+                    I like codeing particularly web design and Machine Learning, and I have a deep interest in Artificial Intelligence, especially in Large Language Models and Generative AI.
+                  </p>
+                  <p className="paragraph">
+                    I thrive on learning and constantly find myself drawn to the cutting edge of technology I love diving into new frameworks and AI concepts.
+                  </p>
+                </div>
+                <div>
+                  <p className="paragraph">
+                    Outside of the tech world, I'm an avid football fan especially FC Barcelona(Visca El Barça!) and enjoy unwinding by playing the piano and guitar.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
 
-          <section>
-            <h2 className="heading-2 mb-6">Let's make it happen</h2>
-            <p className="paragraph mb-8 max-w-xl">
-              Have a project in mind? I'd love to hear about it. Let's create something amazing together.
-            </p>
-            <Link 
-              href="/contact" 
-              className="inline-block px-6 py-3 bg-primary text-white hover:bg-opacity-90 transition-colors"
-            >
-              Book a Call
-            </Link>
+          <section className="relative bg-[#EFECE5] py-12 px-8 rounded-lg">
+            <div className="absolute inset-0 pointer-events-none opacity-[0.80] mix-blend-multiply" 
+              style={{
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+                backgroundSize: '200px 200px'
+              }}
+            />
+            <div className="relative">
+              <h2 className="heading-2 mb-6">Let's make it happen</h2>
+              <p className="paragraph mb-8 max-w-xl">
+                Have a project in mind? I'd love to hear about it. Let's create something amazing together.
+              </p>
+              <Link 
+                href="/contact" 
+                className="inline-block px-6 py-3 bg-primary text-white hover:bg-opacity-90 transition-colors"
+              >
+                Book a Call
+              </Link>
+            </div>
           </section>
         </div>
       </div>
