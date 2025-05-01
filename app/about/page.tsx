@@ -7,37 +7,34 @@ export default function About() {
       <div className="container py-16 md:py-24">
         <nav className="mb-16">
           <ul className="flex space-x-6">
-            <li><Link href="/" className="text-sm hover:text-primary">Home</Link></li>
-            <li><Link href="/work" className="text-sm hover:text-primary">Work</Link></li>
-            <li><Link href="/about" className="text-sm hover:text-primary">About</Link></li>
-            <li><Link href="/contact" className="text-sm hover:text-primary">Contact</Link></li>
+          
           </ul>
         </nav>
 
         <div className="grid gap-16 md:gap-24">
           <section>
-            <h1 className="heading-1 mb-6">Designer, Developer, Creator</h1>
+            <h1 className="heading-1 mb-6">Hi I'm Antony</h1>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <p className="paragraph mb-6">
-                  With a passion for design and development, I take projects from ideation to launch, ensuring a seamless journey that leaves a lasting positive impact on the digital landscape and your business.
+                I like codeing particularly web design and Machine Learning, and I have a deep interest in Artificial Intelligence, especially in Large Language Models and Generative AI.
                 </p>
                 <p className="paragraph">
-                  Creating great web experiences is my primary focus. I ensure each project leaves users with a feel-good sensation through meticulous attention to detail and user-centric design principles.
+                I thrive on learning and constantly find myself drawn to the cutting edge of technology I love diving into new frameworks and AI concepts.
                 </p>
               </div>
               <div>
                 <p className="paragraph">
-                  When I'm not immersed in web development and design, you can find me sharing insights about my freelance journey on YouTube, bouldering, playing music, or tending to my cherished houseplants.
+                Outside of the tech world, I'm an avid football fan especially FC Barcelona(Visca El Barça!) and enjoy unwinding by playing the piano and guitar.
                 </p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="heading-2 mb-6">Let's make it happen</h2>
+            <h2 className="heading-2 mb-6">Wanna know more about me?</h2>
             <p className="paragraph mb-8 max-w-xl">
-              Have a project in mind? I'd love to hear about it. Let's create something amazing together.
+              Contact me here
             </p>
             <Link 
               href="/contact" 

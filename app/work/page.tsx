@@ -77,6 +77,26 @@ export default function Work() {
             ))}
           </section>
 
+          {/* About Me Section */}
+          <section>
+            <h1 className="heading-1 mb-6">Hi I'm Antony</h1>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <p className="paragraph mb-6">
+                  I like codeing particularly web design and Machine Learning, and I have a deep interest in Artificial Intelligence, especially in Large Language Models and Generative AI.
+                </p>
+                <p className="paragraph">
+                  I thrive on learning and constantly find myself drawn to the cutting edge of technology I love diving into new frameworks and AI concepts.
+                </p>
+              </div>
+              <div>
+                <p className="paragraph">
+                  Outside of the tech world, I'm an avid football fan especially FC Barcelona(Visca El Barça!) and enjoy unwinding by playing the piano and guitar.
+                </p>
+              </div>
+            </div>
+          </section>
+
           <section>
             <h2 className="heading-2 mb-6">Let's make it happen</h2>
             <p className="paragraph mb-8 max-w-xl">
