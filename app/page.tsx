@@ -154,7 +154,7 @@ export default function Home() {
       />
       {/* Name at the top, left-aligned, bold, uppercase, tight tracking, Oswald, slightly transparent */}
       <section className="w-full pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6 md:px-12 animate-on-scroll">
-        <h1 className="font-extended font-black uppercase tracking-[-0.04em] text-[clamp(2rem,8vw,8rem)] leading-none mb-4 text-left w-full opacity-80">
+        <h1 className="font-[Satoshi,sans-serif] font-black uppercase tracking-[-0.04em] text-[clamp(2rem,8vw,8rem)] leading-none mb-4 text-left w-full opacity-80">
           ANTONY BRIJESH<span className="ml-2 sm:ml-4 align-baseline">©</span>
         </h1>
       </section>

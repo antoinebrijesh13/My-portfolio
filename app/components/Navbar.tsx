@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-2 sm:space-x-4">
           <Link href="/" className="font-bold text-base sm:text-lg tracking-tight flex items-center hover:text-primary transition-colors">
             <span>AntBrrr</span>
-            <span className="ml-1 text-lg sm:text-xl align-super">©</span>
+            <span className="ml-1 align-super">©</span>
           </Link>
           <div className="hidden md:block text-secondary text-sm sm:text-base font-normal tracking-wide">
             (Developer)
