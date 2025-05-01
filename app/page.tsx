@@ -202,70 +202,73 @@ export default function Home() {
         <div className="container mx-auto">
           <h1 className="heading-1 mb-8 sm:mb-12">Projects</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Project 1 */}
+            {/* Project 1 - Voice-Controlled LT-spice Circuit Designer */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="aspect-video bg-gray-100">
-                <div className="w-full h-full flex items-center justify-center bg-[#8A8C6D]">
-                  <span className="text-white text-lg sm:text-xl">Project Image</span>
-                </div>
+              <div className="aspect-video bg-[#EFECE5] flex items-center justify-center">
+                <img 
+                  src="/maxresdefault.jpg" 
+                  alt="LTspice Circuit Designer Interface"
+                  className="w-full h-full object-contain opacity-80"
+                />
               </div>
               <div className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold mb-2">Project Title</h3>
-                <p className="text-secondary mb-3 sm:mb-4 text-sm sm:text-base">A brief description of the project and its key features.</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-2">Voice-Controlled LT-spice Circuit Designer</h3>
+                <p className="text-secondary mb-3 sm:mb-4 text-sm sm:text-base">
+                  A voice-controlled interface for LT-spice circuit design using Python and machine learning. This project allows users to design circuits through voice commands, making circuit design more accessible and efficient.
+                </p>
                 <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
-                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">React</span>
-                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">Next.js</span>
-                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">TypeScript</span>
+                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">Python</span>
+                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">Machine Learning</span>
+                  <span className="px-2 sm:px-3 py-1 bg-[#EFECE5] text-xs sm:text-sm rounded-full">Circuit Design</span>
                 </div>
                 <div className="flex gap-3 sm:gap-4">
-                  <a href="#" className="text-primary hover:underline text-sm sm:text-base">View Project</a>
-                  <a href="#" className="text-primary hover:underline text-sm sm:text-base">GitHub</a>
+                  <a 
+                    href="https://github.com/Fourmidable123/Voice-Controlled-LT-spice-Circuit-Designer" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline text-sm sm:text-base"
+                  >
+                    View on GitHub ↗
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Project 2 */}
+            {/* Project 2 - Portfolio Website */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="aspect-video bg-gray-100">
-                {/* Project Image Placeholder */}
-                <div className="w-full h-full flex items-center justify-center bg-[#8A8C6D]">
-                  <span className="text-white text-xl">Project Image</span>
-                </div>
+              <div className="aspect-video bg-[#EFECE5] flex items-center justify-center">
+                <img 
+                  src="/image.png" 
+                  alt="Portfolio Website Preview"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Project Title</h3>
-                <p className="text-secondary mb-4">A brief description of the project and its key features.</p>
+                <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
+                <p className="text-secondary mb-4">A modern, responsive portfolio website built with Next.js and TailwindCSS. Features a clean design, smooth animations, and interactive elements.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">React</span>
                   <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Next.js</span>
                   <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">TypeScript</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">TailwindCSS</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">GSAP</span>
                 </div>
                 <div className="flex gap-4">
-                  <a href="#" className="text-primary hover:underline">View Project</a>
-                  <a href="#" className="text-primary hover:underline">GitHub</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="aspect-video bg-gray-100">
-                {/* Project Image Placeholder */}
-                <div className="w-full h-full flex items-center justify-center bg-[#8A8C6D]">
-                  <span className="text-white text-xl">Project Image</span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Project Title</h3>
-                <p className="text-secondary mb-4">A brief description of the project and its key features.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">React</span>
-                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Next.js</span>
-                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">TypeScript</span>
-                </div>
-                <div className="flex gap-4">
-                  <a href="#" className="text-primary hover:underline">View Project</a>
-                  <a href="#" className="text-primary hover:underline">GitHub</a>
+                  <a 
+                    href="https://github.com/antoinebrijesh13/My-portfolio" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    View on GitHub ↗
+                  </a>
+                  <a 
+                    href="https://my-portfolio-pi-azure-47.vercel.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Live Demo ↗
+                  </a>
                 </div>
               </div>
             </div>
