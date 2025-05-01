@@ -11,8 +11,8 @@ const archivoBlack = Archivo_Black({ subsets: ['latin'], weight: '400', variable
 const oswald = Oswald({ subsets: ['latin'], weight: ['700'], variable: '--font-oswald' })
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'Minimalistic portfolio website',
+  title: 'Antony Brijesh',
+  description: 'antony brijesh portfolio',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
 }
 
