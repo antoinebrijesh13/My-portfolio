@@ -5,8 +5,20 @@ import gsap from 'gsap';
 export default function Cursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkIfMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkIfMobile);
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -36,6 +48,7 @@ export default function Cursor() {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('resize', checkIfMobile);
       interactiveElements.forEach(element => {
         element.removeEventListener('mouseenter', () => setIsHovering(true));
         element.removeEventListener('mouseleave', () => setIsHovering(false));
@@ -44,13 +57,17 @@ export default function Cursor() {
   }, []);
 
   useEffect(() => {
-    gsap.to('.cursor-follower', {
-      x: mousePosition.x,
-      y: mousePosition.y,
-      duration: 0.3,
-      ease: 'power1.out'
-    });
-  }, [mousePosition]);
+    if (!isMobile) {
+      gsap.to('.cursor-follower', {
+        x: mousePosition.x,
+        y: mousePosition.y,
+        duration: 0.3,
+        ease: 'power1.out'
+      });
+    }
+  }, [mousePosition, isMobile]);
+
+  if (isMobile) return null;
 
   return (
     <div 
