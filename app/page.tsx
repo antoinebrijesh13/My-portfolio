@@ -290,8 +290,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <div>
               <p className="paragraph mb-4 sm:mb-6">
-              Currently I'm a student at Kyungpook National University in Daegu. Coding is something I genuinely enjoy, especially working on design and Machine Learning aspects. 
-              I'm also really fascinated by Artificial Intelligence – Large Language Models and Generative AI are areas I find particularly exciting. I'm always eager to learn and love keeping up with new tech, trying out different frameworks and exploring AI concepts.
+              Currently I'm a student at Kyungpook National University in Daegu,South Korea. Coding is something I genuinely enjoy, especially working on design and Machine Learning aspects. 
+              I'm also really fascinated by Artificial Intelligence – particularly I find Large Language Models and Generative AI to be the most exciting areas in the field.
               </p>
               <p className="paragraph">
               I'm always eager to learn and love keeping up with new tech, trying out different frameworks and exploring AI concepts.
