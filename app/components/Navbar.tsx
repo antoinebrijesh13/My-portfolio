@@ -52,6 +52,15 @@ export default function Navbar() {
             </li>
             <li>
               {pathname === '/' ? (
+                <button onClick={() => scrollToSection('tech-stack')} className="hover:text-primary transition-colors">
+                  Tech Stack
+                </button>
+              ) : (
+                <Link href="/#tech-stack" className="hover:text-primary transition-colors">Tech Stack</Link>
+              )}
+            </li>
+            <li>
+              {pathname === '/' ? (
                 <button onClick={() => scrollToSection('photography')} className="hover:text-primary transition-colors">
                   Photography
                 </button>

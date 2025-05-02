@@ -306,6 +306,103 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Tech Stack Section */}
+      <section id="tech-stack" className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-[#FDF6EC] animate-on-scroll relative">
+        {/* Grain Texture Overlay */}
+        <div className="fixed inset-0 pointer-events-none opacity-[0.50] mix-blend-multiply" 
+          style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+            backgroundSize: '200px 200px'
+          }}
+        />
+        <div className="container mx-auto relative">
+          <h1 className="heading-1 mb-8 sm:mb-12">Tech Stack</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Frontend Development Card */}
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#EFECE5] flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#8A8C6D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h2 className="text-xl font-bold text-[#8A8C6D]">Frontend Development</h2>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Next.js</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">React</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">TypeScript</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">TailwindCSS</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">GSAP</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">HTML5</span>
+                
+              </div>
+            </div>
+
+            {/* Backend & AI Card */}
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#EFECE5] flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#8A8C6D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h2 className="text-xl font-bold text-[#8A8C6D]">AI</h2>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Python</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">JavaScript</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Machine Learning</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">TensorFlow</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">PyTorch</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Ollama</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Langchain</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Neo4j</span>
+              </div>
+            </div>
+
+            {/* Tools & Others Card */}
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#EFECE5] flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#8A8C6D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h2 className="text-xl font-bold text-[#8A8C6D]">Tools & Others</h2>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Git</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">GitHub</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">VS Code</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Figma</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Adobe Photoshop</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Adobe Lightroom</span>
+              </div>
+            </div>
+
+            {/* Currently Learning Card */}
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#EFECE5] flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#8A8C6D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h2 className="text-xl font-bold text-[#8A8C6D]">Currently Learning</h2>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">LLMs</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Generative AI</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">Three.js</span>
+                <span className="px-3 py-1.5 bg-[#EFECE5] text-sm rounded-full font-medium">WebGL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Photography Section */}
       <section 
         ref={photographyRef} 

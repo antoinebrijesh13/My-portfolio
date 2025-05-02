@@ -4,6 +4,7 @@ import { Inter, Montserrat } from 'next/font/google'
 import { Archivo_Black, Oswald } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
+import Cursor from './components/Cursor'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['900'], variable: '--font-montserrat' })
@@ -27,6 +28,7 @@ export default function RootLayout({
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,400&display=swap" rel="stylesheet" />
       </head>
       <body className={`${inter.variable} ${montserrat.variable} ${archivoBlack.variable} ${oswald.variable} font-sans antialiased overflow-x-hidden`}>
+        <Cursor />
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">
