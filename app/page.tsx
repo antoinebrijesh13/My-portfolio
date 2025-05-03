@@ -655,7 +655,7 @@ export default function Home() {
                   </div>
                   <h2 className="text-xl font-bold text-[#8A8C6D]">Current Playlist</h2>
                 </div>
-                <div className="aspect-square">
+                <div className="aspect-[16/9] sm:aspect-square">
                   <iframe 
                     src="https://open.spotify.com/embed/playlist/7tg4o59k1q0Lz6g4oKXNie" 
                     width="100%" 
