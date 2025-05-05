@@ -10,9 +10,10 @@ gsap.registerPlugin(ScrollToPlugin)
 
 interface NavbarProps {
   className?: string;
+  logoOnly?: boolean;
 }
 
-export default function Navbar({ className = '' }: NavbarProps) {
+export default function Navbar({ className = '', logoOnly = false }: NavbarProps) {
   const pathname = usePathname()
   const { theme } = useTheme()
 
@@ -60,15 +61,17 @@ export default function Navbar({ className = '' }: NavbarProps) {
         </div>
 
         {/* Nav Links */}
-        <nav className="overflow-x-auto">
-          <ul className="flex space-x-2 sm:space-x-4 md:space-x-6 text-secondary text-xs sm:text-sm md:text-base font-medium">
-            <li><NavLink sectionId="projects" text="Projects" /></li>
-            <li className="hidden sm:block"><NavLink sectionId="tech-stack" text="Tech Stack" /></li>
-            <li><NavLink sectionId="photography" text="Photography" /></li>
-            <li><NavLink sectionId="about" text="About" /></li>
-            <li><NavLink sectionId="contact" text="Contact" /></li>
-          </ul>
-        </nav>
+        {!logoOnly && (
+          <nav className="overflow-x-auto">
+            <ul className="flex space-x-2 sm:space-x-4 md:space-x-6 text-secondary text-xs sm:text-sm md:text-base font-medium">
+              <li><NavLink sectionId="projects" text="Projects" /></li>
+              <li className="hidden sm:block"><NavLink sectionId="tech-stack" text="Tech Stack" /></li>
+              <li><NavLink sectionId="photography" text="Photography" /></li>
+              <li><NavLink sectionId="about" text="About" /></li>
+              <li><NavLink sectionId="contact" text="Contact" /></li>
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   )

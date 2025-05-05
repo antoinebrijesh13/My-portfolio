@@ -5,6 +5,7 @@ import { Archivo_Black, Oswald } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from './context/ThemeContext'
 import Cursor from './components/Cursor'
+import { usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['900'], variable: '--font-montserrat' })
@@ -22,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
   return (
     <html lang="en">
       <head>
@@ -29,7 +31,8 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${montserrat.variable} ${archivoBlack.variable} ${oswald.variable} font-sans antialiased overflow-x-hidden`}>
         <ThemeProvider>
-          <Cursor />
+          {/* Only render Cursor if not on /photography or its subpages */}
+          {!(pathname.startsWith('/photography')) && <Cursor />}
           {children}
         </ThemeProvider>
       </body>

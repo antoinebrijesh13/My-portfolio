@@ -49,13 +49,21 @@ export default function PhotographyPage() {
       <div className="container mx-auto py-12 px-4 relative">
         <div className="flex justify-between items-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-[#EFECE5] hover:text-white transition-colors duration-200">Photography</h1>
+          {/* Desktop button */}
           <Link 
             href="/"
-            className="w-full sm:w-auto block text-center px-6 py-3 rounded-full bg-white text-black hover:bg-opacity-90 transition-colors font-bold mb-6 sm:mb-0 text-base sm:text-lg"
+            className="hidden sm:block px-6 py-3 rounded-full bg-white text-black hover:bg-opacity-90 transition-colors font-bold text-base sm:text-lg"
           >
             ← Back to Home
           </Link>
         </div>
+        {/* Mobile button below title */}
+        <Link 
+          href="/"
+          className="block sm:hidden w-full text-center px-6 py-3 rounded-full bg-white text-black hover:bg-opacity-90 transition-colors font-bold mb-6 text-base"
+        >
+          ← Back to Home
+        </Link>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {images.map((image, index) => (
