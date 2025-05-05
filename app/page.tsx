@@ -554,6 +554,12 @@ export default function Home() {
                   </a>
                 </div>
                 <div>
+                  <span className="block text-secondary text-sm mb-1">Phone</span>
+                  <a href="tel:010-2199-2076" className="text-lg hover:text-primary transition-colors">
+                    010-2199-2076
+                  </a>
+                </div>
+                <div>
                   <span className="block text-secondary text-sm mb-1">Location</span>
                   <p className="text-lg">Daegu,South Korea</p>
                 </div>
