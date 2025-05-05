@@ -4,11 +4,17 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import { useTheme } from '../context/ThemeContext'
 
 gsap.registerPlugin(ScrollToPlugin)
 
-export default function Navbar() {
+interface NavbarProps {
+  className?: string;
+}
+
+export default function Navbar({ className = '' }: NavbarProps) {
   const pathname = usePathname()
+  const { theme } = useTheme()
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
@@ -40,7 +46,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="w-full py-3 sm:py-6 md:py-8 px-2 sm:px-6 md:px-12 bg-[#EFECE5]">
+    <header className={`w-full py-3 sm:py-6 md:py-8 px-2 sm:px-6 md:px-12 bg-[#EFECE5] ${className}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Left: Logo + Subtitle */}
         <div className="flex items-center space-x-1 sm:space-x-4">

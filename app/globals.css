@@ -4,7 +4,12 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --background-rgb: 239, 236, 229;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 17, 24, 39;
 }
 
 body {
@@ -12,6 +17,38 @@ body {
   background: rgb(var(--background-rgb));
 }
 
+/* Dark mode overrides */
+.dark .bg-\[\#EFECE5\] {
+  background-color: rgb(17, 24, 39);
+}
+
+.dark .text-secondary {
+  color: rgb(156, 163, 175);
+}
+
+.dark .bg-primary {
+  background-color: rgb(37, 99, 235);
+}
+
+.dark .text-primary {
+  color: rgb(96, 165, 250);
+}
+
+.dark .bg-white {
+  background-color: rgb(31, 41, 55);
+}
+
+.dark .border-gray-200 {
+  border-color: rgb(55, 65, 81);
+}
+
+/* Smooth transitions for theme changes */
+.theme-transition {
+  transition-property: color, background-color, border-color;
+  transition-duration: 300ms;
+}
+
+/* Component styles */
 @layer components {
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;

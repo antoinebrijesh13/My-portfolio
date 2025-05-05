@@ -5,13 +5,14 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Image from 'next/image';
+import Navbar from './components/Navbar';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function Home() {
   const [displayDate, setDisplayDate] = useState('');
   const mainRef = useRef<HTMLDivElement>(null);
-  const photographyRef = useRef<HTMLElement>(null);
+  const photographyRef = useRef<HTMLDivElement>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const lightboxRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -144,7 +145,9 @@ export default function Home() {
   };
 
   return (
-    <main ref={mainRef} className="min-h-screen bg-[#EFECE5] relative">
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex-grow bg-[#EFECE5] relative">
       {/* Grain Texture Overlay */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.50] mix-blend-multiply" 
         style={{
@@ -152,7 +155,8 @@ export default function Home() {
           backgroundSize: '200px 200px'
         }}
       />
-      {/* Name at the top, left-aligned, bold, uppercase, tight tracking, Oswald, slightly transparent */}
+        <main ref={mainRef} className="relative">
+          {/* Name at the top */}
       <section className="w-full pt-8 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6 md:px-12 animate-on-scroll">
         <h1 className="font-[Satoshi,sans-serif] font-black uppercase tracking-[-0.04em] text-[clamp(2rem,8vw,8rem)] leading-none mb-4 text-left w-full opacity-80">
           ANTONY BRIJESH<span className="ml-2 sm:ml-4 align-baseline">©</span>
@@ -417,254 +421,97 @@ export default function Home() {
           }}
         />
         <div className="container mx-auto relative">
+              <div className="max-w-3xl mx-auto text-center mb-12">
           <h1 className="heading-1 mb-4 text-[#EFECE5] hover:text-white transition-colors duration-200 cursor-default">Photography</h1>
-          <p className="text-[#EFECE5] text-lg mb-12 hover:text-white transition-colors duration-200 cursor-default">Sharing some moments I've captured – hope you like them!</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {/* Photo 1 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
+                <p className="text-[#EFECE5] text-lg hover:text-white transition-colors duration-200 cursor-default">Sharing some moments I've captured – hope you like them!</p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {/* Featured Photo 1 */}
+                <div 
+                  className="group relative overflow-hidden aspect-[4/3] cursor-pointer rounded-xl"
               onClick={() => openLightbox("/1.jpg")}
             >
               <Image 
                 src="/1.jpg" 
-                alt="Photography 1" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    alt="Featured Photography 1" 
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
+                    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg font-medium">View</span>
               </div>
             </div>
 
-            {/* Photo 2 */}
+                {/* Featured Photo 2 */}
             <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
+                  className="group relative overflow-hidden aspect-[4/3] cursor-pointer rounded-xl"
               onClick={() => openLightbox("/3.jpg")}
             >
               <Image 
                 src="/3.jpg" 
-                alt="Photography 2" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    alt="Featured Photography 2" 
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
+                    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg font-medium">View</span>
+              </div>
               </div>
             </div>
 
-            {/* Photo 3 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("4.jpg")}
-            >
-              <Image 
-                src="4.jpg" 
-                alt="Photography 3" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
+              {/* View More Button */}
+              <div className="text-center mt-12">
+                <Link 
+                  href="/photography"
+                  className="inline-block px-8 py-4 bg-white text-black rounded-full hover:bg-opacity-90 transition-colors text-lg font-bold shadow-lg hover:shadow-xl"
+                >
+                  View More Photos →
+                </Link>
               </div>
             </div>
+          </section>
 
-            {/* Photo 4 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("7.jpg")}
-            >
-              <Image 
-                src="7.jpg" 
-                alt="Photography 4" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
+          {/* Spotify Section */}
+          <section className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-[#EFECE5] animate-on-scroll relative">
+            <div className="absolute inset-0 pointer-events-none opacity-[0.50] mix-blend-multiply" 
+              style={{
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+                backgroundSize: '200px 200px'
+              }}
+            />
+            <div className="container mx-auto relative">
+              <h1 className="heading-1 mb-8 sm:mb-12">Music I'm Listening To</h1>
+              <div className="max-w-2xl mx-auto">
+                {/* Spotify Playlist Embed */}
+                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
+                  <div className="absolute inset-0 pointer-events-none opacity-[0.30] mix-blend-multiply" 
+                    style={{
+                      backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.75\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+                      backgroundSize: '200px 200px'
+                    }}
+                  />
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-[#EFECE5] flex items-center justify-center">
+                        <svg className="w-6 h-6 text-[#1DB954]" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                        </svg>
               </div>
+                      <h2 className="text-xl font-bold text-[#8A8C6D]">Current Playlist</h2>
             </div>
-
-            {/* Photo 5 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("8.jpg")}
-            >
-              <Image 
-                src="8.jpg" 
-                alt="Photography 5" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
+                    <div className="aspect-[3/4] sm:aspect-square">
+                      <iframe 
+                        src="https://open.spotify.com/embed/playlist/7tg4o59k1q0Lz6g4oKXNie" 
+                        width="100%" 
+                        height="100%" 
+                        frameBorder="0" 
+                        allow="encrypted-media" 
+                        className="rounded-lg"
+                      ></iframe>
               </div>
-            </div>
-
-            {/* Photo 6 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("/5.jpg")}
-            >
-              <Image 
-                src="/5.jpg" 
-                alt="Photography 6" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
-              </div>
-            </div>
-
-            {/* Photo 7 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("/9.jpg")}
-            >
-              <Image 
-                src="/9.jpg" 
-                alt="Photography 7" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
-              </div>
-            </div>
-
-            {/* Photo 8 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("/88.jpg")}
-            >
-              <Image 
-                src="/88.jpg" 
-                alt="Photography 8" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
-              </div>
-            </div>
-
-            {/* Photo 9 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("/20.jpg")}
-            >
-              <Image 
-                src="/20.jpg" 
-                alt="Photography 9" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
-              </div>
-            </div>
-
-            {/* Photo 10 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("/21.jpg")}
-            >
-              <Image 
-                src="/21.jpg" 
-                alt="Photography 10" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
-              </div>
-            </div>
-
-            {/* Photo 11 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("/22.jpg")}
-            >
-              <Image 
-                src="/22.jpg" 
-                alt="Photography 11" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
-              </div>
-            </div>
-
-            {/* Photo 12 */}
-            <div 
-              className="group relative overflow-hidden aspect-[3/4] cursor-pointer"
-              onClick={() => openLightbox("/23.jpg")}
-            >
-              <Image 
-                src="/23.jpg" 
-                alt="Photography 12" 
-                width={600}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Spotify Section */}
-      <section className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-[#EFECE5] animate-on-scroll relative">
-        <div className="absolute inset-0 pointer-events-none opacity-[0.50] mix-blend-multiply" 
-          style={{
-            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
-            backgroundSize: '200px 200px'
-          }}
-        />
-        <div className="container mx-auto relative">
-          <h1 className="heading-1 mb-8 sm:mb-12">Music I'm Listening To</h1>
-          <div className="max-w-2xl mx-auto">
-            {/* Spotify Playlist Embed */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
-              <div className="absolute inset-0 pointer-events-none opacity-[0.30] mix-blend-multiply" 
-                style={{
-                  backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.75\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
-                  backgroundSize: '200px 200px'
-                }}
-              />
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#EFECE5] flex items-center justify-center">
-                    <svg className="w-6 h-6 text-[#1DB954]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-                    </svg>
-                  </div>
-                  <h2 className="text-xl font-bold text-[#8A8C6D]">Current Playlist</h2>
-                </div>
-                <div className="aspect-[3/4] sm:aspect-square">
-                  <iframe 
-                    src="https://open.spotify.com/embed/playlist/7tg4o59k1q0Lz6g4oKXNie" 
-                    width="100%" 
-                    height="100%" 
-                    frameBorder="0" 
-                    allow="encrypted-media" 
-                    className="rounded-lg"
-                  ></iframe>
-                </div>
               </div>
             </div>
           </div>
@@ -734,6 +581,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+        </main>
+      </div>
 
       {/* Lightbox Modal */}
       {selectedImage && (
@@ -757,7 +606,6 @@ export default function Home() {
           />
         </div>
       )}
-
-    </main>
-  )
+    </div>
+  );
 } 
