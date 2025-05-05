@@ -428,7 +428,7 @@ export default function Home() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {/* Featured Photo 1 */}
-                <div 
+            <div 
                   className="group relative overflow-hidden aspect-[4/3] cursor-pointer rounded-xl"
               onClick={() => openLightbox("/1.jpg")}
             >
@@ -481,7 +481,7 @@ export default function Home() {
                 backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
                 backgroundSize: '200px 200px'
               }}
-            />
+              />
             <div className="container mx-auto relative">
               <h1 className="heading-1 mb-8 sm:mb-12">Music I'm Listening To</h1>
               <div className="max-w-2xl mx-auto">
@@ -606,6 +606,17 @@ export default function Home() {
           />
         </div>
       )}
+
+      {/* Persistent Contact Button - Glassmorphism Style */}
+      <button
+        onClick={scrollToContact}
+        className="fixed bottom-6 right-6 z-50 bg-white/30 backdrop-blur-md border border-white/40 text-primary rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-white/50 transition"
+        aria-label="Contact"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.5 7.5a2.25 2.25 0 01-3.182 0l-7.5-7.5A2.25 2.25 0 012.25 6.993V6.75" />
+        </svg>
+      </button>
     </div>
   );
 } 

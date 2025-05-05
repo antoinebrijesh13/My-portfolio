@@ -51,7 +51,7 @@ export default function PhotographyPage() {
           <h1 className="text-4xl md:text-6xl font-bold text-[#EFECE5] hover:text-white transition-colors duration-200">Photography</h1>
           <Link 
             href="/"
-            className="px-6 py-3 rounded-full bg-white text-black hover:bg-opacity-90 transition-colors font-bold"
+            className="w-full sm:w-auto block text-center px-6 py-3 rounded-full bg-white text-black hover:bg-opacity-90 transition-colors font-bold mb-6 sm:mb-0 text-base sm:text-lg"
           >
             ← Back to Home
           </Link>
@@ -71,7 +71,8 @@ export default function PhotographyPage() {
                   width={600}
                   height={600}
                   className="w-full h-full object-cover"
-                  {...(index < 4 ? { priority: true } : { loading: 'lazy' })}
+                  priority={index < 4}
+                  loading={index < 4 ? undefined : "lazy"}
                   onLoad={() => handleImageLoad(image.src)}
                 />
               </div>

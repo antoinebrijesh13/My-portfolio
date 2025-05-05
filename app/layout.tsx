@@ -4,7 +4,6 @@ import { Inter, Montserrat } from 'next/font/google'
 import { Archivo_Black, Oswald } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from './context/ThemeContext'
-import ThemeToggle from './components/ThemeToggle'
 import Cursor from './components/Cursor'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -32,7 +31,6 @@ export default function RootLayout({
         <ThemeProvider>
           <Cursor />
           {children}
-          <ThemeToggle />
         </ThemeProvider>
       </body>
     </html>
