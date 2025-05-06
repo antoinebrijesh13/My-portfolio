@@ -277,6 +277,38 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Project 3 - RAG with Neo4j */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <div className="aspect-video bg-[#EFECE5] flex items-center justify-center">
+                <img 
+                  src="/1_UkBoZ5VvOzj5JbU3XeXMwQ.png" 
+                  alt="RAG with Neo4j Project"
+                  className="w-full h-full object-contain p-8"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">RAG using Knowledge Graphs (Neo4j)</h3>
+                <p className="text-secondary mb-4">An advanced RAG (Retrieval-Augmented Generation) system that leverages Neo4j's graph database for enhanced knowledge retrieval and context understanding in AI responses.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Python</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Neo4j</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Langchain</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">RAG</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Knowledge Graphs</span>
+                </div>
+                <div className="flex gap-4">
+                  <a 
+                    href="https://github.com/antoinebrijesh13/RAG-USING-KNOWLEDGE-GRAPHS-NEO4J-" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    View on GitHub ↗
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
