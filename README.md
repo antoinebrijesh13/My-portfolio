@@ -23,9 +23,7 @@ This repository contains the source code for my personal portfolio website, show
 
 * **HTML5:** For structuring the web content.
 * **CSS3:** For styling the user interface.
-    * _[Optional: Mention specific CSS frameworks like Bootstrap, Tailwind CSS, etc., if used]_
 * **JavaScript:** For interactivity and dynamic content.
-    * _[Optional: Mention specific JS libraries/frameworks like React, Vue, Angular, jQuery, etc., if used]_
 
 ---
 
