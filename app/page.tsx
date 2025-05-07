@@ -306,6 +306,14 @@ export default function Home() {
                   >
                     View on GitHub ↗
                   </a>
+                  <a 
+                    href="https://rag-using-knowledge-graphs-neo4j.onrender.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Live Demo ↗
+                  </a>
                 </div>
               </div>
             </div>
