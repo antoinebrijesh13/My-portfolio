@@ -309,6 +309,39 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Project 4 - MCP Server */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <div className="aspect-video bg-[#EFECE5] flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/image4.webp" 
+                  alt="MCP Server Project"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">MCP Server for Document Writing & Summarization</h3>
+                <p className="text-secondary mb-4">An AI-powered server application that helps with writing and summarizing documents using the Model Context Protocol (MCP). Features include note creation, management, and AI-assisted summarization.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Python</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">MCP</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">AI</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Document Processing</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Text Summarization</span>
+                  <span className="px-3 py-1 bg-[#EFECE5] text-sm rounded-full">Claude Desktop</span>
+                </div>
+                <div className="flex gap-4">
+                  <a 
+                    href="https://github.com/antoinebrijesh13/MCP-sever-for-writing-and-summarising-documents" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    View on GitHub ↗
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
