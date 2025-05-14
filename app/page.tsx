@@ -608,12 +608,14 @@ export default function Home() {
               <p className="text-secondary mb-8 max-w-lg">
                 Your message will be kept private and secure.
               </p>
+              {/* Notebook button temporarily hidden
               <Link 
                 href="https://1drv.ms/o/c/c8b6d04d99283592/EiKXtobmmJRJqyJpq3NoCBcBsKcPly3s5oaVdO5ZNPDUrA?e=i4gDLc" 
                 className="inline-block px-8 py-4 bg-primary text-white rounded-full hover:bg-opacity-90 transition-colors text-lg font-bold shadow"
               >
                 Open Notebook <span className="ml-2">↗</span>
               </Link>
+              */}
             </div>
 
             {/* Right Column - Contact Info */}
